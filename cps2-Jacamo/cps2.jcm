@@ -14,7 +14,32 @@
 
 mas cps2 {
 
-    agent sample_agent
+    agent s424
+    agent s423
+    agent s422 
+    agent s425
+
+    asl-path: src/agt
+
+    agent agent1 {
+  	
+  	join: mqtt
+    focus: mqtt.subscriber  
+    goals: monitor("room")
+ 
+   }
+   
+    agent agent2 {
+    	
+    join: mqtt
+    focus: mqtt.subscriber  
+    goals: monitor("room")
+    
+    }
+
+  workspace mqtt {  
+    artifact subscriber: cartago.MQTT_Subscriber  
+  }
 
     
 
